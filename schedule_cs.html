@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counsellor Schedule - Counseling Management System</title>
+    <link rel="stylesheet" href="schedule_cs.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <section>
+        <header>
+            <h2><a href="#" class="logo">CMS Logo</a></h2>
+            <div class="navigation">
+                <a href="home_cs.html">Home</a>
+                <a href="schedule_cs.html">Schedule</a>
+                <a href="appoinment_cs.html">Appointment</a>
+                <a href="client_progress.html">Client Progress</a>
+                <a href="profile_cs.html">Profile</a>
+                <a href="login.html" id="logout">Logout</a>
+            </div>
+        </header>
+        
+        <div class="schedule-container">
+            <h2>Schedule for Counsellor</h2>
+            <form action="ty.html" method="GET" id="schedule-form">
+                <div class="form-group">
+                    <label for="date">Select Date:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">Select Time:</label>
+                    <input type="time" id="time" name="time" required>
+                </div>
+                <div class="form-group">
+                    <label for="availability">Insert availability:</label>
+                    <select name="availability" id="availability" required>
+                        <option value="">Select</option>
+                        <option value="Available">Available</option>
+                        <option value="Booked">Booked</option>
+                        <option value="Not Available">Not Available</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                </div>
+                <button type="submit" class="btn">Save Schedule</button>
+                   <!--Will Change later when Database is implemented-->
+            </form>
+        </div>
+    </section>
+    <script src="schedule.js"></script>
+</body>
+</html>

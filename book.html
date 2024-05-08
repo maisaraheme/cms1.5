@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment - Counseling Management System</title>
+    <link rel="stylesheet" href="book.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <section>
+        <header>
+            <h2><a href="#" class="logo">CMS Logo</a></h2>
+            <div class="navigation">
+                <a href="home_client.html">Home</a>
+                <a href="schedule_client.html">Counsellor Schedule</a>
+                <a href="book.html">Book Appointment</a>
+                <a href="appoinment.html">Appointment</a>
+                <a href="profile_client.html">Profile</a>
+                <a href="login.html" id="logout">Logout</a>
+            </div>
+        </header>
+        
+        <div class="appointment-container">
+            <h2>Book Appointment</h2>
+            <form action="ty.html" method="GET" id="appointment-form">
+                <div class="form-group">
+                    <label for="date">Select Date:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">Select Time:</label>
+                    <input type="time" id="time" name="time" required>
+                </div>
+                <div class="form-group">
+                    <label for="problem">Select Problem/Issue:</label>
+                    <select name="problem" id="problem" required>
+                        <option value="">Select</option>
+                        <option value="Anxiety">Anxiety</option>
+                        <option value="Depression">Depression</option>
+                        <option value="Relationship Issues">Relationship Issues</option>
+                        <option value="Stress Management">Stress Management</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                </div>
+                <button type="submit" class="btn">Book Appointment</button>
+                    <!--Will Change later when Database is implemented-->
+            </form>
+        </div>
+    </section>
+
+    <script src="book.js"></script>
+</body>
+</html>

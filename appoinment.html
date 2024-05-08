@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appoinment</title>
+    <link rel="stylesheet" href="appoinment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+    <header>
+        <h2><a href="#" class="logo">CMS Logo</a></h2>
+        <div class="navigation">
+            <a href="home_client.html">Home</a>
+            <a href="schedule_client.html">Counsellor Schedule</a>
+            <a href="book.html">Book Appointment</a>
+            <a href="appoinment.html">Appointment</a>
+            <a href="profile_client.html">Profile</a>
+            <a href="login.html" id="logout">Logout</a>
+        </div>
+    </header>
+    <div class="container">
+        <h2>Lists of Appoinments</h2>
+        <div class="booking-container">
+            <div id="booking-details">
+                <!-- Booking details will be displayed here -->
+            </div>
+            <br>
+            <button type="submit" class="btn">Cancel Appointment</button> 
+                <!--Will Change later when Database is implemented-->
+        </div>
+    </div>
+
+    <script src="book.js"></script>
+    <script>
+        // Retrieve booking data from local storage
+        const booking = JSON.parse(localStorage.getItem('booking'));
+        const bookingDetails = document.getElementById('booking-details');
+
+        if (booking) {
+            // Display booking details
+            bookingDetails.innerHTML = `
+                <p><strong>Date:</strong> ${booking.date}</p>
+                <p><strong>Time:</strong> ${booking.time}</p>
+                <p><strong>Problem/Issue:</strong> ${booking.problem}</p>
+            `;
+        } else {
+            // No booking found
+            bookingDetails.innerHTML = '<p>No booking found.</p>';
+        }
+    </script>
+</body>
+</html>

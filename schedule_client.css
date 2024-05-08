@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,700;1,100&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Apply font family and background color */
+  body {
+    font-family: "Poppins";
+    background-color: #f0e3f1;
+  }
+
+  header {
+    position: relative;
+    top: 0%;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    position: relative;
+    color: black;
+    font-size: 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+header .navigation a {
+    color: black;
+    text-decoration: none;
+    font-weight: 1000;
+    padding: 2px 15px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+  
+  /* Center the schedule table */
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Style the schedule table */
+  .schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .schedule-table th,
+  .schedule-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .schedule-table th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+  }
+  
+  .schedule-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .container {
+      padding: 10px;
+    }
+  
+    .schedule-table {
+      font-size: 14px;
+    }
+  
+    .schedule-table th,
+    .schedule-table td {
+      padding: 8px;
+    }
+  }
+  

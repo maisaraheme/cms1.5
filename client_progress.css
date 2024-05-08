@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,700;1,100&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+}
+
+body {
+    background-color: #bfe6b7;;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    color: black;
+    font-size: 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+header .navigation a {
+    color: black;
+    text-decoration: none;
+    font-weight: 1000;
+    padding: 2px 15px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.client-list,
+.session-notes {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 45%;
+}
+
+.client-list h2,
+.session-notes h2 {
+    color: #3c8348;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.client-list ul {
+    list-style: none;
+}
+
+.client-list ul li {
+    margin-bottom: 10px;
+}
+
+.client-list ul li a {
+    color: #3c8348;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.client-list ul li a:hover {
+    color: #234b29;
+}
+
+.session-notes h3 {
+    color: #3c8348;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.session-notes div {
+    margin-bottom: 10px;
+}
+
+.session-notes label {
+    color: #3c8348;
+    font-weight: 500;
+}
+
+.session-notes input[type="date"],
+.session-notes input[type="time"],
+.session-notes textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.session-notes textarea::placeholder {
+    color: #ccc;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #3c8348;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #234b29;
+}

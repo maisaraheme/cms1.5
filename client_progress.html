@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Progress - Counseling Management System</title>
+    <link rel="stylesheet" href="client_progress.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h2><a href="#" class="logo">CMS Logo</a></h2>
+            <div class="navigation">
+            <a href="home_cs.html">Home</a>
+            <a href="schedule_cs.html">Schedule</a>
+            <a href="appoinment_cs.html">Appointment</a>
+            <a href="client_progress.html">Client Progress</a>
+            <a href="profile_cs.html">Profile</a>
+            <a href="login.html" id="logout">Logout</a>
+            </div>
+    </header>
+    <main>
+        <section class="client-list">
+            <h2>Client List</h2>
+            <ul>
+                <li><a href="#" class="client-link" data-client="client1">Client Name 1</a></li>
+                <li><a href="#" class="client-link" data-client="client2">Client Name 2</a></li>
+                <!-- Add more client names as needed -->
+                <div>
+                    <label for="client-name">Client Name:</label>
+                    <input type="text" id="name" name="name" placeholder="John Doe">
+                    <button type="button" id="editClientNameBtn">Edit Client Name</button>
+                    <button type="button" id="saveClientNameBtn" disabled> Save Client Name</button>
+                      <!--Will change later when database is implemented-->
+                </div>
+            </ul>
+        </section>
+        <section class="session-notes">
+            <h2>Session Notes</h2>
+            <div id="client-notes">
+                <h3>Client Name</h3>
+                <div>
+                    <label for="session-date">Session Date:</label>
+                    <input type="date" id="session-date">
+                </div>
+                <div>
+                    <label for="session-time">Session Time:</label>
+                    <input type="time" id="session-time">
+                </div>
+                <textarea id="session-titles" placeholder="Session title"></textarea>
+                <textarea id="session-notes" placeholder="Write session notes here..."></textarea>
+                <button id="save-session">Save Session</button>
+                <button id="view-past-session">View Past Sessions</button>
+                    <!--Will Change later when Database is implemented-->
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const clientLinks = document.querySelectorAll('.client-link');
+            const clientNotes = document.getElementById('client-notes');
+            const sessionNotes = {}; // Object to store session notes
+
+            clientLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const clientName = this.getAttribute('data-client');
+                    showSessionNotes(clientName);
+                });
+            });
+
+            function showSessionNotes(clientName) {
+                // Update client name in session notes
+                clientNotes.querySelector('h3').textContent = clientName;
+            }
+
+            document.getElementById('save-session').addEventListener('click', function() {
+                const clientName = clientNotes.querySelector('h3').textContent;
+                const sessionDate = document.getElementById('session-date').value;
+                const sessionTime = document.getElementById('session-time').value;
+                const sessionNote = document.getElementById('session-notes').value;
+                // Store session note in the object
+                if (!sessionNotes[clientName]) {
+                    sessionNotes[clientName] = [];
+                }
+                sessionNotes[clientName].push({ date: sessionDate, time: sessionTime, note: sessionNote });
+                alert('Session note saved successfully.');
+            });
+
+            document.getElementById('view-past-session').addEventListener('click', function() {
+                const clientName = clientNotes.querySelector('h3').textContent;
+                const pastSessionNotes = sessionNotes[clientName];
+                if (pastSessionNotes && pastSessionNotes.length > 0) {
+                    // Construct HTML for displaying past session notes
+                    let html = '<h4>Past Session Notes</h4>';
+                    pastSessionNotes.forEach(session => {
+                        html += `<div>
+                                    <p>Date: ${session.date}</p>
+                                    <p>Time: ${session.time}</p>
+                                    <p>Note: ${session.note}</p>
+                                </div>`;
+                    });
+                    // Display past session notes
+                    clientNotes.innerHTML = html;
+                } else {
+                    alert('No past session notes found for this client.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
